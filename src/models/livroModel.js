@@ -1,9 +1,21 @@
 import prisma from '../../prisma/client.js';
 
-class TarefaModel {
+class LivroModel {
   getAll = async () => {
     return await prisma.task.findMany();
   };
+
+  getById = async (id) => {
+    try {
+      const livro = await prisma.book.findUnique({
+        where: { id },
+      });
+      return livro;
+    } catch (error) {
+      console.log("Error", error)
+      throw error;
+    }
+  }
 
   create = async (descricao) => {
     return await prisma.task.create({
@@ -41,4 +53,4 @@ class TarefaModel {
   };
 }
 
-export default new TarefaModel();
+export default new LivroModel();

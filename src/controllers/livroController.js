@@ -1,15 +1,29 @@
-import tarefaModel from "../models/tarefaModel.js";
+import livroModel from "../models/livroModel.js";
 
-class TarefaController {
+class LivroController {
   getAll = async (req, res) => {
     try {
-      const tarefas = await tarefaModel.getAll();
-      res.json(tarefas);
+      const livros = await livroModel.getAll();
+      res.json(livros);
     } catch (error) {
       console.log(error);
-      res.satus(500).json({ erro: "Erro ao buscar tarefa" })
+      res.satus(500).json({ erro: "Erro ao buscar livro" })
     }
   };
+
+  getById = async (req, res) => {
+    const { id } = req.params;
+    try {
+      const livro = await livroModel.getById(Number(id));
+      if (!livro) {
+        return res.status(404).json({ erro: "Livro não encontrado" });
+      }
+      res.json(livro);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ erro: "Erro ao buscar livro" });
+    }
+  }
 
   create = async (req, res) => {
     const { descricao } = req.body;
@@ -62,4 +76,4 @@ class TarefaController {
   };
 }
 
-export default new TarefaController();
+export default new LivroController();
