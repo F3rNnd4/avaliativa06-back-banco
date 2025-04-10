@@ -49,13 +49,13 @@ class LivroModel {
 
   delete = async (id) => {
     try {
-      const tarefaDeletada = await prisma.task.delete({
+      const livroDeletado = await prisma.book.delete({
         where: { id },
       });
 
-      return tarefaDeletada;
+      return livroDeletado;
     } catch (error) {
-      console.log("Erro ao deletar tarefa", error);
+      console.log("Erro ao deletar livro", error);
       throw error;
     }
   };

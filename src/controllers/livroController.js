@@ -62,16 +62,16 @@ class LivroController {
     const { id } = req.params;
 
     try {
-      const sucesso = await tarefaModel.delete(Number(id));
+      const sucesso = await livroModel.delete(Number(id));
 
       if (!sucesso) {
-        return res.status(404).json({ erro: "Tarefa não encontrada" });
+        return res.status(404).json({ erro: "Livro não encontrado" });
       }
 
-      res.status(200).send({ message: "Tarefa deletada com sucesso" });
+      res.status(200).send({ message: "Livro deletado com sucesso" });
     } catch (error) {
       console.log(error);
-      res.status(500).json({ erro: "Erro ao deletar tarefa" });
+      res.status(500).json({ erro: "Erro ao deletar livro" });
     }
   };
 }
