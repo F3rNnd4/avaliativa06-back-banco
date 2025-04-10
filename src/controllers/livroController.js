@@ -26,16 +26,16 @@ class LivroController {
   }
 
   create = async (req, res) => {
-    const { descricao } = req.body;
+    const { title, author, publisher, isbn, category } = req.body;
     try {
-      if (!descricao) {
-        return res.status(400).json({ erro: "Descrição é obrigatória" });
+      if (!title || !author || !publisher || !isbn || !category) {
+        return res.status(400).json({ erro: "É preciso prencher com as informações" });
       }
-      const novaTarefa = await tarefaModel.create(descricao);
-      res.status(201).json(novaTarefa);
+      const novoLivro = await livroModel.create(title, author, publisher, isbn, category);
+      res.status(201).json(novoLivro);
     } catch (error) {
       console.log(error);
-      res.status(500).json({ erro: "Erro ao criar tarefa" });
+      res.status(500).json({ erro: "Erro ao criar livro" });
     }
   };
 

@@ -17,10 +17,14 @@ class LivroModel {
     }
   }
 
-  create = async (descricao) => {
-    return await prisma.task.create({
+  create = async (title, author, publisher, isbn, category) => {
+    return await prisma.book.create({
       data: {
-        descricao
+        title,
+        author,
+        publisher,
+        isbn,
+        category
       }
     })
   };
