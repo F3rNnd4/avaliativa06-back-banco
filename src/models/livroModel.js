@@ -2,7 +2,7 @@ import prisma from "../../prisma/client.js";
 
 class LivroModel {
   getAll = async () => {
-    return await prisma.task.findMany();
+    return await prisma.book.findMany();
   };
 
   getById = async (id) => {

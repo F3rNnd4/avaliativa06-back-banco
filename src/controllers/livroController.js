@@ -4,10 +4,13 @@ class LivroController {
   getAll = async (req, res) => {
     try {
       const livros = await livroModel.getAll();
+      if (!livros || livros.length === 0) {
+        return res.status(404).json({ erro: "Nenhum livro encontrado" });
+      }
       res.json(livros);
     } catch (error) {
       console.log(error);
-      res.satus(500).json({ erro: "Erro ao buscar livro" })
+      res.status(500).json({ erro: "Erro ao buscar livro" })
     }
   };
 
