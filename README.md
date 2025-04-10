@@ -8,7 +8,12 @@ Uma biblioteca municipal está passando por um processo de modernização e prec
 
 ### Funcionalidades Obrigatórias
 
-**API RESTful** com as seguintes rotas: - `GET /books` - Listar todos os livros - `GET /books/:id` - Obter detalhes de um livro específico - `POST /books` - Adicionar um novo livro - `PUT /books/:id` - Atualizar informações de um livro - `DELETE /books/:id` - Remover um livro do acervo
+**API RESTful** com as seguintes rotas: 
+- `GET /books`- Listar todos os livros 
+- `GET /books/:id`- Obter detalhes de um livro específico 
+- `POST /books`- Adicionar um novo livro 
+- `PUT /books/:id`- Atualizar informações de um livro 
+- `DELETE /books/:id`- Remover um livro do acervo
 
 ## Instruções de instalação
 
@@ -22,8 +27,8 @@ Uma biblioteca municipal está passando por um processo de modernização e prec
 
 ### GET /livros
 
-Lista todos os livros cadastrados.
-URL: `http://localhost:3000/books`
+- Lista todos os livros cadastrados.
+    - URL: `http://localhost:3000/books`
 
 Exemplo de resposta:
 
@@ -58,8 +63,8 @@ Exemplo de resposta:
 
 ### GET /livros/:id
 
-Busca um livro pelo ID.
-URL: `http://localhost:3000/books/1`
+- Busca um livro pelo ID.
+    - URL: `http://localhost:3000/books/1`
 
 Exemplo de resposta:
 
@@ -82,8 +87,8 @@ Exemplo de resposta:
 
 ### POST /livros
 
-Cria um novo livro.
-URL: `http://localhost:3000/books`
+- Cria um novo livro.
+    - URL: `http://localhost:3000/books`
 
 Exemplo de corpo da requisição:
 
@@ -120,8 +125,8 @@ Exemplo de resposta:
 
 ### PUT /livros/:id
 
-Atualiza um livro existente.
-URL: `http://localhost:3000/books/1`
+- Atualiza um livro existente.
+    - URL: `http://localhost:3000/books/1`
 
 Exemplo de corpo da requisição:
 
@@ -152,8 +157,8 @@ Exemplo de resposta:
 
 ### DELETE /livros/:id
 
-Remove um livro do acervo.
-URL: `http://localhost:3000/books/1`
+- Remove um livro do acervo.
+    - URL: `http://localhost:3000/books/1`
 
 Exemplo de resposta:
 
