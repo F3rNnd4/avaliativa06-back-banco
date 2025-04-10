@@ -1,4 +1,4 @@
-import prisma from '../../prisma/client.js';
+import prisma from "../../prisma/client.js";
 
 class LivroModel {
   getAll = async () => {
@@ -12,10 +12,10 @@ class LivroModel {
       });
       return livro;
     } catch (error) {
-      console.log("Error", error)
+      console.log("Error", error);
       throw error;
     }
-  }
+  };
 
   create = async (title, author, publisher, isbn, category) => {
     return await prisma.book.create({
@@ -24,32 +24,36 @@ class LivroModel {
         author,
         publisher,
         isbn,
-        category
-      }
-    })
+        category,
+      },
+    });
   };
 
-  update = async (id, concluida, descricao) => {
+  update = async (id, title, author, publisher, isbn, category) => {
     try {
-      const tarefa = await prisma.task.update({
+      const livro = await prisma.book.update({
         where: { id },
-        data: { concluida: concluida !== undefined ? concluida : true, descricao },
-      })
-      return tarefa;
+        data: { title, 
+                author, 
+                publisher, 
+                isbn, 
+                category 
+              },
+      });
+      return livro;
     } catch (error) {
-      console.log("Error", error)
+      console.log("Error", error);
       throw error;
     }
   };
 
-  delete = async (id) => {    
+  delete = async (id) => {
     try {
       const tarefaDeletada = await prisma.task.delete({
         where: { id },
       });
 
       return tarefaDeletada;
-
     } catch (error) {
       console.log("Erro ao deletar tarefa", error);
       throw error;

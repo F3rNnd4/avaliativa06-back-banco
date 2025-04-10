@@ -41,20 +41,20 @@ class LivroController {
 
   update = async (req, res) => {
     const { id } = req.params;
-    const { concluida, descricao } = req.body;
+    const { title, author, publisher, isbn, category } = req.body;
 
     try {
-      const tarefaAtualizada = await tarefaModel.update(Number(id), concluida, descricao);
+      const livroAtualizado = await livroModel.update(Number(id), title, author, publisher, isbn, category);
 
-      if (!tarefaAtualizada) {
-        return res.status(404).json({ erro: "Tarefa não encontrada!" });
+      if (!livroAtualizado) {
+        return res.status(404).json({ erro: "Livro não encontrado!" });
       }
 
-      res.json(tarefaAtualizada);
+      res.json(livroAtualizado);
 
     } catch (error) {
       console.error(error);
-      res.status(500).json({ erro: "Erro ao atualizar tarefa!" });
+      res.status(500).json({ erro: "Erro ao atualizar livro!" });
     }
   };
 
