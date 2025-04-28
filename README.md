@@ -21,7 +21,7 @@ Uma biblioteca municipal está passando por um processo de modernização e prec
 2. Dê um `npm install` para instalar as dependências
 3. Crie um arquivo .env na raiz do projeto com `DATABASE_URL="file:./dev.db"` para usar o SQLite
 4. Execute `npx prisma migrate dev` após alterar o arquivo **schema.prisma** para criar o banco de dados SQLite
-5. Execute npm run dev para iniciar o servidor
+5. Execute **npm run dev** para iniciar o servidor
 
 ## Exemplos de Requisições para Cada Endpoint
 
@@ -69,20 +69,18 @@ Exemplo de resposta:
 Exemplo de resposta:
 
 ```json
-[
-    {
-        "id": 1,
-        "title": "Não é como nos filmes",
-        "author": "Lynn Painter",
-        "publisher": "Editora Intrínseca",
-        "isbn": 7558,
-        "category": "Romance",
-        "year": null,
-        "description": null,
-        "createdAt": "2025-04-10T17:57:06.529Z",
-        "updatedAt": "2025-04-10T18:18:56.803Z"
-    }
-]
+{
+    "id": 1,
+    "title": "Não é como nos filmes",
+    "author": "Lynn Painter",
+    "publisher": "Editora Intrínseca",
+    "isbn": 7558,
+    "category": "Romance",
+    "year": null,
+    "description": null,
+    "createdAt": "2025-04-10T17:57:06.529Z",
+    "updatedAt": "2025-04-10T18:18:56.803Z"
+}
 ```
 
 ### POST /livros
@@ -164,7 +162,7 @@ Exemplo de resposta:
 
 ```json
 {
-    "message": "Livro removido com sucesso!"
+    "message": "Livro deletado com sucesso!"
 }
 ```
 
