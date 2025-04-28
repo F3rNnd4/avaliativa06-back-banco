@@ -17,7 +17,7 @@ class LivroModel {
     }
   };
 
-  create = async (title, author, publisher, isbn, category) => {
+  create = async (title, author, publisher, isbn, category, year = null, description = null) => {
     return await prisma.book.create({
       data: {
         title,
@@ -25,11 +25,13 @@ class LivroModel {
         publisher,
         isbn,
         category,
+        year,
+        description
       },
     });
   };
 
-  update = async (id, title, author, publisher, isbn, category) => {
+  update = async (id, title, author, publisher, isbn, category, year = null, description = null) => {
     try {
       const livro = await prisma.book.update({
         where: { id },
@@ -37,7 +39,9 @@ class LivroModel {
                 author, 
                 publisher, 
                 isbn, 
-                category 
+                category,
+                year,
+                description
               },
       });
       return livro;

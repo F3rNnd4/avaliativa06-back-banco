@@ -30,12 +30,12 @@ class LivroController {
   }
 
   create = async (req, res) => {
-    const { title, author, publisher, isbn, category } = req.body;
+    const { title, author, publisher, isbn, category, year, description } = req.body;
     try {
       if (!title || !author || !publisher || !isbn || !category) {
         return res.status(400).json({ erro: "É preciso prencher com as informações" });
       }
-      const novoLivro = await livroModel.create(title, author, publisher, isbn, category);
+      const novoLivro = await livroModel.create(title, author, publisher, isbn, category, year, description);
       res.status(201).json(novoLivro);
     } catch (error) {
       console.log(error);
@@ -45,10 +45,10 @@ class LivroController {
 
   update = async (req, res) => {
     const { id } = req.params;
-    const { title, author, publisher, isbn, category } = req.body;
+    const { title, author, publisher, isbn, category, year, description } = req.body;
 
     try {
-      const livroAtualizado = await livroModel.update(Number(id), title, author, publisher, isbn, category);
+      const livroAtualizado = await livroModel.update(Number(id), title, author, publisher, isbn, category, year, description);
 
       if (!livroAtualizado) {
         return res.status(404).json({ erro: "Livro não encontrado!" });
