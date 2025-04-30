@@ -28,7 +28,7 @@ Uma biblioteca municipal está passando por um processo de modernização e prec
 ### GET /livros
 
 - Lista todos os livros cadastrados.
-    - URL: `http://localhost:3000/books`
+    - URL: `http://localhost:3000/livros`
 
 Exemplo de resposta:
 
@@ -64,7 +64,7 @@ Exemplo de resposta:
 ### GET /livros/:id
 
 - Busca um livro pelo ID.
-    - URL: `http://localhost:3000/books/1`
+    - URL: `http://localhost:3000/livros/1`
 
 Exemplo de resposta:
 
@@ -86,7 +86,7 @@ Exemplo de resposta:
 ### POST /livros
 
 - Cria um novo livro.
-    - URL: `http://localhost:3000/books`
+    - URL: `http://localhost:3000/livros`
 
 Exemplo de corpo da requisição:
 
@@ -105,7 +105,6 @@ Exemplo de corpo da requisição:
 Exemplo de resposta:
 
 ```json
-[
     {
         "id": 1,
         "title": "Não é como nos filmes",
@@ -118,13 +117,12 @@ Exemplo de resposta:
         "createdAt": "2025-04-10T17:57:06.529Z",
         "updatedAt": "2025-04-10T18:18:56.803Z"
     }
-]
 ```
 
 ### PUT /livros/:id
 
 - Atualiza um livro existente.
-    - URL: `http://localhost:3000/books/1`
+    - URL: `http://localhost:3000/livros/1`
 
 Exemplo de corpo da requisição:
 
@@ -137,7 +135,6 @@ Exemplo de corpo da requisição:
 Exemplo de resposta:
 
 ```json
-[
     {
         "id": 1,
         "title": "Apostando no amor",
@@ -150,13 +147,12 @@ Exemplo de resposta:
         "createdAt": "2025-04-10T17:57:06.529Z",
         "updatedAt": "2025-04-10T18:18:56.803Z"
     }
-]
 ```
 
 ### DELETE /livros/:id
 
 - Remove um livro do acervo.
-    - URL: `http://localhost:3000/books/1`
+    - URL: `http://localhost:3000/livros/1`
 
 Exemplo de resposta:
 
